@@ -96,10 +96,19 @@ console.log("result", result);
   // 4. define a union to remove the error so that both functional expressions return without errors.
   //!solution
   // string | number //?not sure how to write 
-  const getAverage = (x:number, y:number, z:number):number =>  {
-    return (x + y + z) / 3;
-  };
-  console.log("test", getAverage);
+//   const getAverage = (x:number, y:number, z?:string):number | string  =>  {
+//     if (z) {
+//         const result = x + y + z;
+//         return result;
+//     }
+//         else {
+//             const result = x + y;
+//             return result
+//         }
+
+   
+//   };
+//   console.log("test", getAverage);
   
   // 5. try to solve the error problem again, this time using a generic instead.
   // const getElementAtIndex = (array, index) => {
