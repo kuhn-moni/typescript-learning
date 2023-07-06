@@ -61,6 +61,39 @@ function multiply(a:number, b:number) {
 const result = multiply(1, 2);
 console.log("result", result);
 
+
+// ----------------------------------------------------------------------
+// !Q1
+export  interface User {
+    name: string;
+    age: number;
+    occupation: string;
+
+}
+
+
+export const users: User[] = [
+    {
+        name: 'Max Mustermann',
+        age: 25,
+        occupation: 'Chimney sweep'
+    },
+    {
+        name: 'Kate Müller',
+        age: 23,
+        occupation: 'Astronaut'
+    }
+];
+
+export function logPerson(user: User) {
+    console.log(` - ${user.name}, ${user.age}`);
+}
+
+console.log('Users:');
+users.forEach(logPerson);
+
+
+
 // ------------------------------------------------------------------------------------------------//
 
 // // 1. add types to remove the "Parameter 'a' implicitly has an 'any' type." error
