@@ -64,36 +64,84 @@ console.log("result", result);
 
 // ----------------------------------------------------------------------
 // !Q1
-export  interface User {
+// export  interface User {
+//     name: string;
+//     age: number;
+//     occupation: string;
+
+// }
+
+
+// export const users: User[] = [
+//     {
+//         name: 'Max Mustermann',
+//         age: 25,
+//         occupation: 'Chimney sweep'
+//     },
+//     {
+//         name: 'Kate Müller',
+//         age: 23,
+//         occupation: 'Astronaut'
+//     }
+// ];
+
+// export function logPerson(user: User) {
+//     console.log(` - ${user.name}, ${user.age}`);
+// }
+
+// console.log('Users:');
+// users.forEach(logPerson);
+
+
+// !Q2 TYPESCRIPT
+interface User {
     name: string;
     age: number;
     occupation: string;
-
 }
 
+interface Admin {
+    name: string;
+    age: number;
+    role: string;
+}
 
-export const users: User[] = [
+export type Person = User | Admin;
+
+export const persons: Person[] = [
     {
         name: 'Max Mustermann',
         age: 25,
         occupation: 'Chimney sweep'
     },
     {
+        name: 'Jane Doe',
+        age: 32,
+        role: 'Administrator'
+    },
+    {
         name: 'Kate Müller',
         age: 23,
         occupation: 'Astronaut'
+    },
+    {
+        name: 'Bruce Willis',
+        age: 64,
+        role: 'World saver'
     }
 ];
 
-export function logPerson(user: User) {
-    console.log(` - ${user.name}, ${user.age}`);
+export function logPerson(person: Person) {
+    let additionalInformation: string;
+    if (person.role) {
+        additionalInformation = person.role;
+    } else {
+        additionalInformation = person.occupation;
+    }
+    console.log(` - ${person.name}, ${person.age}, ${additionalInformation}`);
 }
 
-console.log('Users:');
-users.forEach(logPerson);
-
-
-
+persons.forEach(logPerson);
 // ------------------------------------------------------------------------------------------------//
 
 // // 1. add types to remove the "Parameter 'a' implicitly has an 'any' type." error
